@@ -1,4 +1,4 @@
-package numeriv
+package numderiv
 
 import (
 	"errors"
