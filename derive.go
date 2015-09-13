@@ -78,7 +78,7 @@ func BackFirstDerivInt(d []int, x int, s int) (float64, error) {
 	} else if s < 0 {
 		return 0.0, errors.New("s must be positive")
 	}
-	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) - float64(d[x-2*s])) / (2.0 * float64(s))), nil
+	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) + float64(d[x-2*s])) / (2.0 * float64(s))), nil
 }
 
 //Calculate a backwards looking 2nd order approximate 1st derivative of an int32 slice
@@ -90,7 +90,7 @@ func BackFirstDerivInt32(d []int32, x int32, s int32) (float64, error) {
 	} else if s < 0 {
 		return 0.0, errors.New("s must be positive")
 	}
-	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) - float64(d[x-2*s])) / (2.0 * float64(s))), nil
+	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) + float64(d[x-2*s])) / (2.0 * float64(s))), nil
 }
 
 //Calculate a backwards looking 2nd order approximate 1st derivative of an int64 slice
@@ -102,7 +102,7 @@ func BackFirstDerivInt64(d []int64, x int64, s int64) (float64, error) {
 	} else if s < 0 {
 		return 0.0, errors.New("s must be positive")
 	}
-	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) - float64(d[x-2*s])) / (2.0 * float64(s))), nil
+	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) + float64(d[x-2*s])) / (2.0 * float64(s))), nil
 }
 
 //Calculate a backwards looking 2nd order approximate 1st derivative of a float32 slice
@@ -114,7 +114,7 @@ func BackFirstDerivFloat32(d []float32, x int, s int) (float64, error) {
 	} else if s < 0 {
 		return 0.0, errors.New("s must be positive")
 	}
-	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) - float64(d[x-2*s])) / (2.0 * float64(s))), nil
+	return ((3.0*float64(d[x]) - 4.0*float64(d[x-s]) + float64(d[x-2*s])) / (2.0 * float64(s))), nil
 }
 
 //Calculate a backwards looking 2nd order approximate 1st derivative of a float64 slice
@@ -126,5 +126,5 @@ func BackFirstDerivFloat64(d []float64, x int, s int) (float64, error) {
 	} else if s < 0 {
 		return 0.0, errors.New("s must be positive")
 	}
-	return (3.0*d[x] - 4.0*d[x-s] - d[x-2*s]) / (2.0 * float64(s)), nil
+	return (3.0*d[x] - 4.0*d[x-s] + d[x-2*s]) / (2.0 * float64(s)), nil
 }
