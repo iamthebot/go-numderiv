@@ -54,7 +54,7 @@ func BackSecondDerivFloat32(d []float32, x int, s int) (float64, error) {
 	} else if s < 0 {
 		return 0.0, errors.New("s must be positive")
 	}
-	return ((2.0*float64(d[x]) - 5.0*float64(d[x-s]) + 4.0*float64(d[x-2*s]) - float64(d[x-3*s])) / (float64(s) * float64(s))), nil
+	return (2.0*float64(d[x]) - 5.0*float64(d[x-s]) + 4.0*float64(d[x-2*s]) - float64(d[x-3*s])) / (float64(s) * float64(s)), nil
 }
 
 //Calculate a backwards 2nd order approximate 2nd derivative of a float64 slice
